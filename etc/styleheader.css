@@ -1,0 +1,105 @@
+<HTML><center>
+<meta http-equiv="expires" content="0">
+<meta name="description" content="Report designed for smtp message body">
+<meta name="author" content="michael.s.denney at gmail.com">
+
+<style>
+.SB_Title               { font-family: Arial; font-size: 16pt; color: #000066; font-weight:bold; vertical-align: middle}
+.SB_Heading             { font-family: Arial; font-size: 12pt; color: #000066; font-weight:bold }
+.SB_Heading_Array       { font-family: Arial; font-size: 10pt; color: #333333; }
+.SB_HeadingRed          { font-family: Arial; font-size: 12pt; color: #990000; font-weight:bold }
+.SB_HeadingGreen        { font-family: Arial; font-size: 12pt; color: #009900; font-weight:bold }
+.SB_HeadingYellow       { font-family: Arial; font-size: 12pt; color: #AEB404; font-weight:bold }
+.SB_NoteRed             { font-family: Arial; font-size: 8pt; color: #990000; font-weight:bold;}
+.SB_Note                { font-family: Arial; font-size: 8pt; color: #333333; font-weight:normal;}
+.SB_Note_Light          { font-family: Arial; font-size: 8pt; color: #333333; font-weight:150;margin-left: 95;text-indent: -95}
+.SB_Footer              { font-family: Arial; font-size: 7pt; color: #333333; font-weight:100;margin-left: 30;text-align:left:center}
+
+
+.SB_Footer_Table               {
+                                        solid #333333;
+                                        font-size: 7pt;
+                                        font-family: Arial;
+                                        padding-right: 0;
+                                        padding-left: 0;
+                                        cellpadding: 0;}
+
+.SB_Table               {
+                                        border:1px solid #000066; font-size: 10pt;
+                                        font-family: Arial;
+                                        padding-right: 10;
+                                        padding-left: 10;
+                                        cellpadding: 1;
+                                        border-color: #000066; }
+
+.SB_TableHeading        {
+                                        font-family: Arial;
+                                        font-size: 10pt;
+                                        font-weight: bold;
+                                        background-color: #000066;
+                                        color: #FFFFFF;
+                                        border-width: 0;
+                                        padding-right: 10;
+                                        padding-left: 10; }
+
+.SB_TableRow1           {
+                                        font-size: 10pt;
+                                        font-family: Arial;
+                                        background-color: #8BC5E2;
+                                        text-align: left;
+                                        color: #000066;
+                                        padding-right: 10;
+                                        padding-left: 10; }
+
+.SB_TableRow2           {
+                                        font-size: 10pt;
+                                        font-family: Arial;
+                                        background-color: #D5EAF5;
+                                        text-align: left;
+                                        color: #000066;
+                                        padding-right: 10; 
+                                        padding-left: 10; }
+.SB_TableRow3           {
+                                        font-size: 10pt;
+                                        font-family: Arial;
+                                        background-color: #FFFFFF;
+                                        text-align: left;
+                                        color: #000066;
+                                        padding-right: 10;
+                                        padding-left: 10; }
+
+.SB_Table_sm            {
+                                        border:1px solid #000066; font-size: 8pt;
+                                        font-family: Arial;
+                                        cellpadding: 1;
+                                        border-color: #000066; }
+
+.SB_sTableHeading_sm    {
+                                        font-family: Arial;
+                                        font-size: 8pt;
+                                        font-weight: bold;
+                                        background-color: #000066;
+                                        color: #FFFFFF;
+                                        border-width: 0; }
+
+.SB_sTableRow1_sm       {
+                                        font-size: 8pt;
+                                        font-family: Arial;
+                                        background-color: #8BC5E2;
+                                        text-align: left;
+                                        color: #000066;}
+
+.SB_sTableRow2_sm       {
+                                        font-size: 8pt;
+                                        font-family: Arial;
+                                        background-color: #D5EAF5;
+                                        text-align: left;
+                                        color: #000066; }
+
+.SB_sTableRow3_sm       {
+                                        font-size: 8pt;
+                                        font-family: Arial;
+                                        background-color: #FFFFFF;
+                                        text-align: left;
+                                        color: #000066; }
+</style>

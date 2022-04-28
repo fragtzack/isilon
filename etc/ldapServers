@@ -1,0 +1,16 @@
+#used by ldapTest script. All ldap servers referenced by Netapp and Isilon should be in here
+#atlcentldap11.aBiz.com
+atlcentldap12.aBiz.com
+atlvcentldap01.aBiz.com
+atlvcentldap02.aBiz.com ## comment at end of line ignored test
+atlvcentldap03.aBiz.com
+atlcentsvc01.aBiz.com
+atlcentsvc02.aBiz.com
+atlcentsvc03.aBiz.com
+atlcentsvc04.aBiz.com
+atlcentsvc05.aBiz.com
+atlcentsvc06.aBiz.com
+atlcentsvc07.aBiz.com
+atlcentsvc08.aBiz.com
+atlcentsvc09.aBiz.com
+atlcentsvc10.aBiz.com

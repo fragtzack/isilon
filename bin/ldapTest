@@ -1,0 +1,54 @@
+#!/tool/pandora/bin/zsh
+#purpose: test ldap servers response performance. Email if > 1 second
+#author: midenney
+#emailAlert='michael.denney.aBiz.com'
+emailAlert='dl.mpd_sys_engds_all.aBiz.com'
+
+DIRNAME=/tool/pandora/bin/dirname
+REALPATH=/tool/pandora/bin/realpath
+GREP=/tool/pandora/bin/grep
+EGREP=/tool/pandora/bin/egrep
+SED=/tool/pandora/bin/sed
+AWK=/tool/pandora/bin/grep
+LDAPSEARCH=/tool/pandora/bin/ldapsearch
+TIME=/tool/pandora/bin/time
+XARGS=/tool/pandora/bin/xargs
+MUTT=/tool/pandora/bin/mutt
+
+emailBody=""
+elimit="1.5" ##elapsed limit. ldapsearch results over this number will email
+
+based=$($DIRNAME $($REALPATH $0))
+cd $based
+lServersLoc=$($REALPATH $based/../etc/ldapServers)
+lServers=$($SED 's/[[:space:]]*#.*//;/^[[:space:]]*$/d' $lServersLoc)
+
+function logit(){
+   echo $1 >> ../var/log/ldapTest.log
+}
+
+echo "$lServers"|while read SRV; do
+   qStamp=$(date)
+   logLine="$qStamp - $SRV"
+   results=$($TIME -p $LDAPSEARCH -x -w p@D1d0M -b "dc.aBiz.dc=com" -H ldap://$SRV -D "mpdldap.aBiz.com" "(&(objectclass=posixGroup)(memberUid=logviewer))" 2>&1)
+   RC=$?
+   grepOut=$(echo $results|$EGREP -e ^result -e ^text -e ^real|$XARGS -n2 -d '\n')
+   logLine="$logLine - RC $RC - $grepOut"
+   logit "$logLine"
+   elapsed=$(echo $logLine|awk '{printf $NF}')
+   if (( $elapsed > $elimit )); then
+       logit "$(date) $elapsed elapsed time too high for $SRV"
+       emailBody="$emailBody $elapsed elapsed time too high for $SRV\n"
+   fi
+   let zero=0
+   if (( $RC != $zero )) ; then
+       logit "$Return $(date) Exit code from ldapsearch does not equal zero"
+       emailBody="$emailBody $Return code from ldapsearch does not equal zero\n"
+   fi
+done
+   
+if [ -n "$emailBody" ]  ; then
+   logit "$(date) - issues detected, sending email to $emailAlert"
+   emailBody="$emailBody\nIf alert persists for same LDAP server, should remove LDAP server from Netapp/Isilon utilization and remove the server from being monitored by modifying $lServersLoc.\n 'cvs update' should be performed with any changes to $lServersLoc .\n" 
+   echo "$emailBody"| $MUTT -s "ldapsearch alert: slow >$elimit sec result detected. $(date)" $emailAlert
+fi

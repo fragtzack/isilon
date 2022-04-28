@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for ISI in $(cat /usr/local/stortools/etc/isilonlist) ; do
+   #echo $ISI
+   ssh -i /usr/local/stortools/etc/.ssh/id_rsa $ISI "sudo isi_for_array 'mkdir -p /ifs/data/Isilon_Support/showmounts/\$(uname -n)'"
+   ssh -i /usr/local/stortools/etc/.ssh/id_rsa $ISI "sudo isi_for_array 'showmount -a > /ifs/data/Isilon_Support/showmounts/\$(uname -n)/$(date +%d%b%y-%R)'"
+done

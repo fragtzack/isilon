@@ -1,0 +1,183 @@
+###################################################################
+##    USER CHANGEBLE GLOBAL VARS
+###################################################################
+[DEFAULT]
+##Specify exclusions below here
+#Format to specify excludes:
+#<Isilon_Cluster> = <path> < issues to exclude. Multiple delimited by , >
+#<items to exclude> can be :
+#      1. ALL
+#      2. AppID
+#      3. SnapSchedule
+#      4. SnapDuration
+#      5. SyncSchedule
+#      6. target_snapshot_archive
+#Example:
+#SHISOLPRNAP007/ifs = ALL
+#SHISOLPLPAP007/ifs/SHISOLPLPAP007/EPIC_Prod/Blob_Shares/ED=appid
+#SHISOLPLPAP002/ifs/testShare  = APPID , SyncSchedule
+[Excludes]
+anIsilonNameHEre/some/long/path/with many spaces=syncschedule
+SHISOLPEMAP001/ifs=all
+SHISOLPFCAP001/ifs=all
+SHISOLPLPAP001/ifs=all
+SHISOLPLPAP002/ifs=all
+SHISOLPLPAP003/ifs=all
+SHISOLPLPAP004/ifs=all
+ISILP005/ifs=all
+SHISOLPLPAP006/ifs=all
+SHISOLPLPAP007/ifs=all
+SHISOLPMCAP001/ifs=all
+SHISOLPRNAP001/ifs=all
+SHISOLPRNAP003/ifs=all
+SHISOLPRNAP006/ifs=all
+SHISOLPRNAP007/ifs=all
+SHISOLPRNAP007/ifs/SHISOLPRNAP007/PlayGround/Cohesity-bkptest=SyncSchedule,target_snapshot_archive,SnapSchedule,SnapDuration
+SHISOLPRNAP007/ifs/SHISOLPRNAP007/AllRNVProdApp/Tst-PDP-LTA=all
+SHISOLPRNAP007/ifs/SHISOLPRNAP007/AllRNVProdApp/Tst-PDP-STS=all
+SHISOLPRNAP007/ifs/SHISOLPRNAP007/AllRNVProdApp/Tst-Ram-rnv07=all
+ISILP005/ifs/ISILP005/Fileserver/AD-EXCHANGE
+ISILP005/ifs/ISILP005/Fileserver/Archive
+ISILP005/ifs/ISILP005/Fileserver/ByersShare
+ISILP005/ifs/ISILP005/Fileserver/Depts4/CDI Program
+ISILP005/ifs/ISILP005/Fileserver/Depts18/UHA/Oakland
+ISILP005/ifs/ISILP005/Fileserver/Depts9/CareCounselUsers
+ISILP005/ifs/ISILP005/Fileserver/Depts3/Cath Fellows
+ISILP005/ifs/ISILP005/Fileserver/Compliance-READ ONLY
+ISILP005/ifs/ISILP005/Fileserver/Depts9/ConciergeMedicine
+ISILP005/ifs/ISILP005/Fileserver/Depts9/ConciergeMedicine
+ISILP005/ifs/ISILP005/Fileserver/CorruptAprilRaymond
+ISILP005/ifs/ISILP005/Fileserver/Depts4/Cost Center Request
+ISILP005/ifs/ISILP005/Fileserver/DATA14
+ISILP005/ifs/ISILP005/Fileserver/DATABASE
+ISILP005/ifs/ISILP005/Fileserver/DC EVENT LOGS
+ISILP005/ifs/ISILP005/Fileserver/Data10/Dashboard-PDF
+ISILP005/ifs/ISILP005/Fileserver/Data
+ISILP005/ifs/ISILP005/Fileserver/Data10
+ISILP005/ifs/ISILP005/Fileserver/Data12
+ISILP005/ifs/ISILP005/Fileserver/Data15
+ISILP005/ifs/ISILP005/Fileserver/Data16
+ISILP005/ifs/ISILP005/Fileserver/Data2
+ISILP005/ifs/ISILP005/Fileserver/Data20
+ISILP005/ifs/ISILP005/Fileserver/Data3
+ISILP005/ifs/ISILP005/Fileserver/Data30
+ISILP005/ifs/ISILP005/Fileserver/Data4
+ISILP005/ifs/ISILP005/Fileserver/Data5
+ISILP005/ifs/ISILP005/Fileserver/Data55
+ISILP005/ifs/ISILP005/Fileserver/Data6
+ISILP005/ifs/ISILP005/Fileserver/Data7
+ISILP005/ifs/ISILP005/Fileserver/Data8
+ISILP005/ifs/ISILP005/Fileserver/Data9
+ISILP005/ifs/ISILP005/Fileserver/F/Depts1
+ISILP005/ifs/ISILP005/Fileserver/Depts11
+ISILP005/ifs/ISILP005/Fileserver/Depts12
+ISILP005/ifs/ISILP005/Fileserver/Depts14
+ISILP005/ifs/ISILP005/Fileserver/Depts15
+ISILP005/ifs/ISILP005/Fileserver/Depts16
+ISILP005/ifs/ISILP005/Fileserver/Depts17
+ISILP005/ifs/ISILP005/Fileserver/Depts18
+ISILP005/ifs/ISILP005/Fileserver/Depts19
+ISILP005/ifs/ISILP005/Fileserver/L/Depts2
+ISILP005/ifs/ISILP005/Fileserver/Depts3
+ISILP005/ifs/ISILP005/Fileserver/Depts4
+ISILP005/ifs/ISILP005/Fileserver/Depts7
+ISILP005/ifs/ISILP005/Fileserver/Y/Depts8
+ISILP005/ifs/ISILP005/Fileserver/Depts9
+ISILP005/ifs/ISILP005/Fileserver/Data9/test/EXpress
+ISILP005/ifs/ISILP005/Fileserver/Data6/Epic data
+ISILP005/ifs/ISILP005/Fileserver/F
+ISILP005/ifs/ISILP005/Fileserver/Data9/FCSExpress PROD
+ISILP005/ifs/ISILP005/Fileserver/Data9/FCSExpress PROD
+ISILP005/ifs/ISILP005/Fileserver/Data9/FCSExpress TEST
+ISILP005/ifs/ISILP005/Fileserver/Depts4/FTPtest2
+ISILP005/ifs/ISILP005/Fileserver/File Server Migration
+ISILP005/ifs/ISILP005/Fileserver/Data/HRTerm
+ISILP005/ifs/ISILP005/Fileserver/STC_FileServers/HomeDir
+ISILP005/ifs/ISILP005/Fileserver/HomeDir1
+ISILP005/ifs/ISILP005/Fileserver/IAMShare
+ISILP005/ifs/ISILP005/Fileserver/INC1002464_Private_Restore_12162019_0800
+ISILP005/ifs/ISILP005/Fileserver/Images
+ISILP005/ifs/ISILP005/Fileserver/Data2/NQRG
+ISILP005/ifs/ISILP005/Fileserver/L
+ISILP005/ifs/ISILP005/Fileserver/Living Well 2015
+ISILP005/ifs/ISILP005/Fileserver/MEM
+ISILP005/ifs/ISILP005/Fileserver/MIDDLEWARE
+ISILP005/ifs/ISILP005/Fileserver/Data3/Matmgmt
+ISILP005/ifs/ISILP005/Fileserver/MedicareReviews-Readonly
+ISILP005/ifs/ISILP005/Fileserver/NETWORK
+ISILP005/ifs/ISILP005/Fileserver/ORACLE
+ISILP005/ifs/ISILP005/Fileserver/OVF
+ISILP005/ifs/ISILP005/Fileserver/PACS-POC
+ISILP005/ifs/ISILP005/Fileserver/Depts19/PFS-Patient Financial Assistance
+ISILP005/ifs/ISILP005/Fileserver/PROCESSS
+ISILP005/ifs/ISILP005/Fileserver/L/Depts2/SecurityServices/PhotoID-Private/Photo ID
+ISILP005/ifs/ISILP005/Fileserver/L/Profiles
+ISILP005/ifs/ISILP005/Fileserver/ProfileTest
+ISILP005/ifs/ISILP005/Fileserver/Depts7/Qualcomm Health Center
+ISILP005/ifs/ISILP005/Fileserver/R
+ISILP005/ifs/ISILP005/Fileserver/Ricoh-SecurePrint
+ISILP005/ifs/ISILP005/Fileserver/SQL
+ISILP005/ifs/ISILP005/Fileserver/STORAGE-BACKUP
+ISILP005/ifs/ISILP005/Fileserver/Depts3/Nursemgr/Private/B3-C3 APCM's/Scandocs
+ISILP005/ifs/ISILP005/Fileserver/L/Depts2/SecurityServices
+ISILP005/ifs/ISILP005/Fileserver/Depts18/Sitemaster_Data
+ISILP005/ifs/ISILP005/Fileserver/F/Depts1/SmartTermConfig
+ISILP005/ifs/ISILP005/Fileserver/Depts4/SmartTermConfig
+ISILP005/ifs/ISILP005/Fileserver/Depts3/SupplyDistribution
+ISILP005/ifs/ISILP005/Fileserver/TOOLS
+ISILP005/ifs/ISILP005/Fileserver/DATA14/Teg-LPCH-PROD
+ISILP005/ifs/ISILP005/Fileserver/DATA14/Teg-LPCH-TEST
+ISILP005/ifs/ISILP005/Fileserver/Terminated_EMP
+ISILP005/ifs/ISILP005/Fileserver/Depts19/UHA-2
+ISILP005/ifs/ISILP005/Fileserver/STC_FileServers/UHAClinics
+ISILP005/ifs/ISILP005/Fileserver/Data5/Universal Knowledge
+ISILP005/ifs/ISILP005/Fileserver/UnstructuredData
+ISILP005/ifs/ISILP005/Fileserver/R/User33
+ISILP005/ifs/ISILP005/Fileserver/User37
+ISILP005/ifs/ISILP005/Fileserver/Userprofiles
+ISILP005/ifs/ISILP005/Fileserver/Users1
+ISILP005/ifs/ISILP005/Fileserver/Users10
+ISILP005/ifs/ISILP005/Fileserver/Users11
+ISILP005/ifs/ISILP005/Fileserver/Users12
+ISILP005/ifs/ISILP005/Fileserver/Users13
+ISILP005/ifs/ISILP005/Fileserver/Users14
+ISILP005/ifs/ISILP005/Fileserver/Users15
+ISILP005/ifs/ISILP005/Fileserver/Users16
+ISILP005/ifs/ISILP005/Fileserver/Users17
+ISILP005/ifs/ISILP005/Fileserver/Users18
+ISILP005/ifs/ISILP005/Fileserver/Users19
+ISILP005/ifs/ISILP005/Fileserver/Users2
+ISILP005/ifs/ISILP005/Fileserver/Users20
+ISILP005/ifs/ISILP005/Fileserver/Users21
+ISILP005/ifs/ISILP005/Fileserver/Users22
+ISILP005/ifs/ISILP005/Fileserver/Users23
+ISILP005/ifs/ISILP005/Fileserver/Users24
+ISILP005/ifs/ISILP005/Fileserver/Users25
+ISILP005/ifs/ISILP005/Fileserver/Users26
+ISILP005/ifs/ISILP005/Fileserver/Users27
+ISILP005/ifs/ISILP005/Fileserver/Users28
+ISILP005/ifs/ISILP005/Fileserver/Users3
+ISILP005/ifs/ISILP005/Fileserver/Users30
+ISILP005/ifs/ISILP005/Fileserver/Users31
+ISILP005/ifs/ISILP005/Fileserver/Users32
+ISILP005/ifs/ISILP005/Fileserver/VS12 Users34
+ISILP005/ifs/ISILP005/Fileserver/Users36
+ISILP005/ifs/ISILP005/Fileserver/Users38
+ISILP005/ifs/ISILP005/Fileserver/Users4
+ISILP005/ifs/ISILP005/Fileserver/Users5
+ISILP005/ifs/ISILP005/Fileserver/Users6
+ISILP005/ifs/ISILP005/Fileserver/Users7
+ISILP005/ifs/ISILP005/Fileserver/Users8
+ISILP005/ifs/ISILP005/Fileserver/Users9
+ISILP005/ifs/ISILP005/Fileserver/STC_FileServers/VC_Archival_share
+ISILP005/ifs/ISILP005/Fileserver/STC_FileServers/Dept/ValleyCare
+ISILP005/ifs/ISILP005/Fileserver/STC_FileServers/valleycare_Apps
+ISILP005/ifs/ISILP005/Fileserver/STC_FileServers/Valleycare_Finance
+ISILP005/ifs/ISILP005/Fileserver/WINTEL
+ISILP005/ifs/ISILP005/Fileserver/Wintel-Test3
+ISILP005/ifs/ISILP005/Fileserver/WintelTeam
+ISILP005/ifs/ISILP005/Fileserver/X Drive_Users9_Corpfilevs2
+ISILP005/ifs/ISILP005/Fileserver/Y
+ISILP005/ifs/ISILP005/Fileserver/skysynctest
+ISILP005/ifs/ISILP005/Fileserver/Data9/test
+ISILP005/ifs/ISILP005/Fileserver/unix
